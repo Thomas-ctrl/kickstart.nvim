@@ -266,6 +266,7 @@ require('lazy').setup({
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     opts = {
+      preset = 'helix',
       -- delay between pressing a key and opening which-key (milliseconds)
       -- this setting is independent of vim.o.timeoutlen
       delay = 0,
@@ -309,6 +310,7 @@ require('lazy').setup({
       -- Document existing key chains
       spec = {
         { '<leader>s', group = '[S]earch' },
+        { '<leader>b', group = '[B]uffers' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
@@ -832,7 +834,7 @@ require('lazy').setup({
       -- By default, we use the Lua implementation instead, but you may enable
       -- the rust implementation via `'prefer_rust_with_warning'`
       --
-      -- See :h blink-cmp-config-fuzzy for more information
+      -- NOTE: See :h blink-cmp-config-fuzzy for more information
       fuzzy = { implementation = 'lua' },
 
       -- Shows a signature help window while you type arguments for a function
@@ -942,7 +944,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
+  require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
@@ -950,7 +952,7 @@ require('lazy').setup({
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!

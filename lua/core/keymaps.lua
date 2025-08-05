@@ -7,6 +7,15 @@ vim.keymap.set('n', '<leader>-', vim.cmd.Ex, { desc = 'Open netrw view' })
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- bufferline move buffers
+vim.keymap.set('n', '<S-l>', ':bnext<CR>', { desc = 'Go to next buffer' })
+vim.keymap.set('n', '<S-h>', ':bprevious<CR>', { desc = 'Go to previous buffer' })
+vim.keymap.set('n', '<leader>bd', ':bdelete<CR>', { desc = 'Delete buffer' })
+-- { 'n', '<leader>b1', require('bufferline').go_to(2), desc = 'Go to Buffer 2' },
+-- { 'n', '<leader>b1', require('bufferline').go_to(3), desc = 'Go to Buffer 3' },
+-- { 'n', '<leader>b1', require('bufferline').go_to(4), desc = 'Go to Buffer 4' },
+-- },
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
